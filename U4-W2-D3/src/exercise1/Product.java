@@ -4,19 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
+
     private long id;
     private String name;
     private String category;
     private double price;
-    private String customer;
+//        private String customer
 
 
-    public Product(long id, String name, String category, double price,String customer) {
+
+
+    public Product(long id, String name, String category, double price) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.price = price;
-        this.customer=customer;
+//            this.customer=customer;
+
     }
 
     public String getCategory() {
@@ -42,13 +46,10 @@ public class Product {
 
     }
 
-    public String getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(String customer) {
-        this.customer = customer;
-    }
+//    public String getCustomer() {
+//        return customer;
+//    }
 }
+
 
 

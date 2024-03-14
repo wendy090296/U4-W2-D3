@@ -2,10 +2,14 @@ package exercise1;
 
 import org.w3c.dom.ls.LSOutput;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Order {
+
     private long id;
     private String status;
     private LocalDate orderDate,deliveryDate;
@@ -14,13 +18,43 @@ public class Order {
     private Customer customer;
 
 
-    public Order(long id,String status, LocalDate orderDate, LocalDate deliveryDate,List<Product> products, Customer customer){
-        this.orderDate= orderDate;
-        this.products=products;
-        this.customer=customer;
+    public Order(Customer customer) {
+        Random random = new Random();
+        this.id = random.nextLong();
+        this.status = "Order processed!";
+        this.orderDate = LocalDate.now();
+        this.deliveryDate = LocalDate.now().plusWeeks(1);
+        this.products = new ArrayList<>();
+        this.customer = customer;
     }
 
     public Customer getCustomer() {
         return customer;
+    }
+
+
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", status='" + status + '\'' +
+                ", orderDate=" + orderDate +
+                ", deliverDate=" + deliveryDate +
+                ", products=" + products +
+                ", customer=" + customer +
+                '}';
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+
+    public String getOrderDate() {
+        return getOrderDate();
     }
 }

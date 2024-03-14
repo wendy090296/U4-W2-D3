@@ -1,15 +1,26 @@
-package exercise1;
+import java.util.Random;
 
 public class Customer {
+
     private long id;
     private String name;
 
-    private Integer tier;
+    private int  tier;
 
-    public Customer(long id,String name, Integer tier) {
-        this.id = id;
+    public Customer(String name, int  tier) {
         this.name=name;
         this.tier=tier;
+        Random rndm= new Random();
+        this.id=rndm.nextLong();
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tier=" + tier +
+                '}';
     }
 
     public Integer getTier() {
